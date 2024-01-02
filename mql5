@@ -1,0 +1,62 @@
+
+// The EW Trends Algo
+// Developed by Forex Robot Easy Team
+// Developer's site: forexroboteasy.com
+
+// List of major currency pairs
+string[] currencyPairs = {'EURUSD', 'GBPUSD', 'USDJPY', 'USDCHF'};
+
+// The Pearson Trend algorithm to predict market trends
+bool ThePearsonTrend()
+{
+    // Implementation of The Pearson Trend algorithm
+    // ...
+
+    // Return true if market trend is predicted accurately, otherwise false
+    return true;
+}
+
+// Trade execution function
+void ExecuteTrade(string currencyPair)
+{
+    // Calculate take profit and stop loss points
+    double takeProfit = 6.5;
+    double stopLoss = 30;
+
+    // Place trade order for the specified currency pair
+    // ...
+
+    // Wait for trade to be executed
+    // ...
+
+    // Monitor trade status and manage it accordingly
+    // ...
+
+    // Close the trade once take profit or stop loss is reached
+    // ...
+
+    // Log trade execution details
+    // ...
+}
+
+// Main function to operate The EW Trends Algo
+void OnStart()
+{
+    // Loop through each currency pair and execute trades
+    for(int i = 0; i < currencyPairs.Length(); i++)
+    {
+        // Check if market trend is predicted accurately
+        if(ThePearsonTrend())
+        {
+            // Execute trade for the current currency pair
+            ExecuteTrade(currencyPairs[i]);
+
+            // Check if another trade can be executed simultaneously
+            if(i < currencyPairs.Length() - 1 && ThePearsonTrend())
+            {
+                // Execute another trade for the next currency pair
+                ExecuteTrade(currencyPairs[i+1]);
+            }
+        }
+    }
+}
